@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "ae3803c5-f5a5-4801-bb55-b57ded926a49",
+		"name": "FIWARE SUMMIT DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "781162"
+	},
+	"item": [
+		{
+			"name": "Get CarSpeed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fiware-service",
+						"value": "opcua_car"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/demo"
+					}
+				],
+				"url": {
+					"raw": "http://{{CBhost}}:1026/v2/entities/age01_Car/attrs/CarSpeed",
+					"protocol": "http",
+					"host": [
+						"{{CBhost}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"age01_Car",
+						"attrs",
+						"CarSpeed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "doAccelerate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "fiware-service",
+						"value": "opcua_car",
+						"type": "text"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/demo",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"value\": [\"1\"],\r\n  \"type\": \"command\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{CBhost}}:1026/v2/entities/age01_Car/attrs/CarAccelerate?type=Device",
+					"protocol": "http",
+					"host": [
+						"{{CBhost}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"age01_Car",
+						"attrs",
+						"CarAccelerate"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Device"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "doStop",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "fiware-service",
+						"value": "opcua_car"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/demo"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n}"
+				},
+				"url": {
+					"raw": "http://{{CBhost}}:1026/v2/entities/age01_Car/attrs/CarStop?type=Device",
+					"protocol": "http",
+					"host": [
+						"{{CBhost}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"age01_Car",
+						"attrs",
+						"CarStop"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Device"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get CarEngineTemperature",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fiware-service",
+						"value": "opcua_car"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/demo"
+					}
+				],
+				"url": {
+					"raw": "http://{{CBhost}}:1026/v2/entities/age01_Car/attrs/CarEngineTemperature",
+					"protocol": "http",
+					"host": [
+						"{{CBhost}}"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities",
+						"age01_Car",
+						"attrs",
+						"CarEngineTemperature"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "CBhost",
+			"value": "localhost"
+		}
+	]
+}
