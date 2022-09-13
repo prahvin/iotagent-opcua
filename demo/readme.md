@@ -6,11 +6,14 @@
 # Steps:
 
 -   gh repo clone Engineering-Research-and-Development/iotagent-opcua
--   In the AGECONF folder, then:
+
+From AGECONF folder:
 -   Delete the `config.json` provided as example
 -   Edit the config.properties replacing the value of the endpoint property with the url of the server you want to
     connect to (Car server = `opc.tcp://136.243.156.113:9092/UA/CarServer` or Boiler server =
     `opc.tcp://opcua.demo-this.com:51210/UA/SampleServer`)
+
+Go back in the root folder:
 -   Run: `docker-compose -f docker-compose-external-server.yml up`
 -   If you're using the Car Server run the http requests in the postman collection in the following order:
     `Get CarSpeed, doAccelerate, Get CarSpeed, doStop, Get CarSpeed`
